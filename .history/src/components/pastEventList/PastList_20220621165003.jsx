@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Grid,Image,Badge,Box,GridItem,Text,SimpleGrid,Input,InputGroup,Button,InputRightElement} from '@chakra-ui/react';
-import Logo from "../assets/NewLogo.jpg"
+import Logo from "../assets/Logo.jpg"
 import  {useNavigate} from 'react-router-dom';
 import Data from '../../pastApi/json';
 

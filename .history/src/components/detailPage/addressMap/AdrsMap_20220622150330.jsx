@@ -64,7 +64,7 @@ import {
         flexDirection='column'
         alignItems='center'
         h='300px'
-        w='450px'
+        w='250px'
       >
         <Box position='absolute' left={0} top={0} h='100%' w='100%'>
           {/* Google Map Box */}

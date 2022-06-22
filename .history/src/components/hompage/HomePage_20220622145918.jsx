@@ -98,8 +98,6 @@ function HomePage() {
                   name={eventList?.name}
                   image={eventList?.poster_url}
                   category={eventList?.category?.name}
-
-                                                            // burda gelen data bozuk olduğu için "replace" metodu ile gelebilecek her türlü yanlış datayı silmek için kullandım
                   description={eventList?.content?.replace("<br /><br />", " ").replace("<br /><br />", " ").replace("</strong>", " ").replace("<br />", " ")
                     .replace("<strong>", " ").replace("<br /><strong>", " ")
                     .replace("</strong><br />", " ")
