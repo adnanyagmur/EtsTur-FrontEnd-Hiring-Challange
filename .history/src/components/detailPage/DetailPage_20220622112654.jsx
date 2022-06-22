@@ -1,6 +1,6 @@
 
 
-import { Grid,Link, Image, Badge,Box, GridItem, Text, SimpleGrid, Button} from '@chakra-ui/react';
+import { Grid, Image, Badge,Box, GridItem, Text, SimpleGrid, Button} from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import Calculate from './rotaCalculate/Calculate.js';
 import AdrsMap from './addressMap/AdrsMap.jsx'
@@ -90,9 +90,7 @@ const DetailPage = () => {
 
                                 <Text> Etkinlik mekanı : {venue} </Text>
                                 <br></br>
-                                <Text> Bilet almak için tıklay : <Link href={ticketLink} isExternal>
-  Bilet Linki 
-</Link>  </Text>
+                                <Text> Bilet almak için tıklay : {ticketLink} </Text>
                                 <br></br>
                                 <Text> {address} </Text>
                                 <br></br>
