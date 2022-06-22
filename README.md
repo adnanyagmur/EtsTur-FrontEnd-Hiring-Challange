@@ -1,3 +1,9 @@
+#  Site
+[I'm an inline-style link](https://www.youtube.com/watch?v=RjiCjGlxJ9g)
+#  Environment variables
+
+Bu projeyi ayağa kaldıracağınız zaman kendi GOOGLE API KEY inizi localinizde oluşturmanız gerekmektedir aksi takdirde google maps çalışmayacaktır. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
