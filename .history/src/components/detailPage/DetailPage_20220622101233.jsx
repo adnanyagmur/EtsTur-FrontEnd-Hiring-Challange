@@ -1,6 +1,6 @@
 
 
-import { Grid, Image, Badge,Box, GridItem, Text, SimpleGrid, Button} from '@chakra-ui/react';
+import { Grid, Image, Badge,Box, GridItem, Text, SimpleGrid, Button, background} from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import Calculate from './rotaCalculate/Calculate.js';
 import AdrsMap from './addressMap/AdrsMap.jsx'
