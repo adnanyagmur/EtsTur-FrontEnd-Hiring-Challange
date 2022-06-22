@@ -1,5 +1,5 @@
 #  Site
-[I'm an inline-style link](https://www.youtube.com/watch?v=RjiCjGlxJ9g)
+[Bu link üzerinden canlıdaki halini görebilirsiniz](https://www.youtube.com/watch?v=RjiCjGlxJ9g)
 #  Environment variables
 
 Bu projeyi ayağa kaldıracağınız zaman kendi GOOGLE API KEY inizi localinizde oluşturmanız gerekmektedir aksi takdirde google maps çalışmayacaktır. 
