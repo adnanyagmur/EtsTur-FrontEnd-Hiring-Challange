@@ -10,6 +10,9 @@ function HomePage() {
     navigation("/gecmisEtkinlikler")
   })
 
+  
+ 
+
   const [eventList, setEventList] = useState([])
 
   useEffect(() => {
@@ -28,6 +31,8 @@ function HomePage() {
   console.log(eventList)
 
   return (
+   
+
         <Grid
           templateAreas={`"header header"
                   "nav main"
@@ -85,11 +90,23 @@ function HomePage() {
                 Geçmiş Etkinlikler
               </Button>
             </SimpleGrid>
+
+
           </GridItem>
+
           <GridItem pl='6' pt='4' pr='6' bg='white' area={'main'} >
+
             <SimpleGrid columns={[1, null, 2, 3, 4, 5]} spacing='40px'>
 
+
+
+
               {eventList.items?.map((eventList, key) =>
+
+
+
+
+
 
                 <EventList
                   key={eventList?.id}
@@ -182,7 +199,10 @@ function HomePage() {
                   district={eventList?.venue?.district?.name}
                   
                 >
+
                 </EventList>
+
+
               )}
             </SimpleGrid>
           </GridItem>
@@ -193,6 +213,12 @@ function HomePage() {
             </SimpleGrid>
           </GridItem>
         </Grid>
+
+
+
+
+
+   
   )
 }
 

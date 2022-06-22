@@ -1,6 +1,6 @@
 
 
-import { Grid, Link, Heading, Image, Badge, Box, GridItem, Text, SimpleGrid, Button } from '@chakra-ui/react';
+import { Grid, Link,Heading, Image, Badge, Box, GridItem, Text, SimpleGrid, Button } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import Calculate from './rotaCalculate/Calculate.js';
 import AdrsMap from './addressMap/AdrsMap.jsx'
@@ -25,7 +25,7 @@ const DetailPage = () => {
 
 
     const navigation = useNavigate();
-
+    
     const handleClick = () => {
         navigation("/")
     }
@@ -64,7 +64,7 @@ const DetailPage = () => {
                         gap={5}
                         bg="purple.500"
                     >
-                        <GridItem pl="2" pr="7" pt="2" rowSpan={2} colSpan={1} bg='white' >
+                        <GridItem pl="2" pr="7" pt="2" rowSpan={2} colSpan={1} bg='white' >  
                             <Heading as='h2' size='lg'>
                                 {name}
                             </Heading>
@@ -72,14 +72,14 @@ const DetailPage = () => {
                             <Heading as='h2' size='md'>  {category}</Heading>
                             <br></br>
                             <Badge borderRadius='full' px='2' bg='purple.500' color={"white"}>
-                                {price === true ? ("Ücretsiz") : ("Ücretli")}
+                                {price === true ?("Ücretsiz") : ("Ücretli")  }
                             </Badge>
                             <br></br>
                             <br></br>
                             <Image src={image} ></Image>
                         </GridItem>
                         <GridItem pl="2" pr="2" pt="2" colSpan={4} bg='white' >
-
+                          
                             <Heading as='h2' size='md'>  ETKİNLİK DETAYLARI</Heading>
                             <br></br>
                             <Text>{description} </Text>
@@ -91,25 +91,33 @@ const DetailPage = () => {
 
                             <Text> Etkinlik mekanı : {venue} </Text>
                             <br></br>
-                            <Text> Bilet almak için sağdaki yazıya tıklayınız : <Link href={ticketLink} isExternal>
+                            <Text> Bilet almak için tıklay : <Link href={ticketLink} isExternal>
                                 Bilet Linki
                             </Link>  </Text>
                             <br></br>
                             <Text>Etkinlik adresi :  {address} /  {district}</Text>
+                            
                         </GridItem>
+
+
                         <GridItem pr="2" pt="2" pl="7" colSpan={2} bg='white' ><br></br>
                             <Text> Bulunduğunuz konumu girerek rotanızı görebilirisiniz: </Text>
                             <br></br>
+
                             <Calculate
                                 calculate={address}
                             ></Calculate>
+
                         </GridItem>
+
                         <GridItem pl="7" pr="2" pt="2" colSpan={2} bg='white' ><br></br>
                             <Text> Etkinlik adresinin haritadaki konumu: </Text>
                             <br></br>
                             <AdrsMap calculate={address} ></AdrsMap>
                         </GridItem>
                     </Grid>
+
+
                 </SimpleGrid>
             </GridItem>
             <GridItem pl='2' bg='gray.200' area={'footer'}>
@@ -119,6 +127,10 @@ const DetailPage = () => {
                 </SimpleGrid>
             </GridItem>
         </Grid>
+
+
+
+
     )
 }
 

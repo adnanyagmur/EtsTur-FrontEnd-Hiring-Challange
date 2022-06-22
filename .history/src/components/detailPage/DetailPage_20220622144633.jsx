@@ -91,7 +91,7 @@ const DetailPage = () => {
 
                             <Text> Etkinlik mekanı : {venue} </Text>
                             <br></br>
-                            <Text> Bilet almak için sağdaki yazıya tıklayınız : <Link href={ticketLink} isExternal>
+                            <Text> Bilet almak için tıklay : <Link href={ticketLink} isExternal>
                                 Bilet Linki
                             </Link>  </Text>
                             <br></br>

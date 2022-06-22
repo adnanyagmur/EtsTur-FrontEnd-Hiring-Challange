@@ -36,13 +36,16 @@ import {
     const [directionsResponse, setDirectionsResponse] = useState(null)
   
   
- 
+    /** @type React.MutableRefObject<HTMLInputElement> */
     const originRef = useRef()
-
+    /*  @type React.MutableRefObject<HTMLInputElement> 
+    const destiantionRef = useRef() */
   
     if (!isLoaded) {
       return <SkeletonText />
     }
+  
+   
   
     async function calculateRoute() {
       
@@ -57,6 +60,11 @@ import {
       setDirectionsResponse(results)
    
     }
+   
+   
+  
+   
+  
     
     return (
       <Flex
@@ -64,7 +72,7 @@ import {
         flexDirection='column'
         alignItems='center'
         h='300px'
-        w='550px'
+        w='500px'
       >
         <Box position='absolute' left={0} top={0} h='100%' w='100%'>
           {/* Google Map Box */}
@@ -77,7 +85,10 @@ import {
               streetViewControl: false,
               mapTypeControl: false,
               fullscreenControl: false,
-            }}>
+            }}
+            
+          >
+            
             {directionsResponse && (
               <DirectionsRenderer directions={directionsResponse} />
             )}
@@ -90,6 +101,7 @@ import {
                 <Input type='text' placeholder='Origin'  ref={originRef}   backgroundColor={"purple.500"} value={String(calculate)}  opacity={90}/>
               </Autocomplete>
             </Box>
+         
           </HStack>
         </Box>
       </Flex>
