@@ -27,6 +27,21 @@ function HomePage() {
 
   console.log(eventList)
 
+  //filtreleme
+  const [filterString, setFilterString] = useState();
+  
+  
+  const filtered = eventList?.items?.name.filter((item)=>{
+        return Object.keys(item).some((key)=>
+        item[key]
+        .toString()
+        .toLowerCase()
+        .includes(filterString.toLocaleLowerCase())
+        )
+      })
+    }
+  
+
   return (
         <Grid
           templateAreas={`"header header"
@@ -48,6 +63,7 @@ function HomePage() {
                   bg='white'
                   color='black'
                   placeholder='Şehir İsmi'
+                  onChange={(e)=> setFilterString(e.target.value)}
                 />
                 <InputRightElement width='4.5rem'>
                   <Button bg='purple.600' mr='2' h='1.75rem' size='sm' /* onClick={handleClick} */>
@@ -89,7 +105,7 @@ function HomePage() {
           <GridItem pl='6' pt='4' pr='6' bg='white' area={'main'} >
             <SimpleGrid columns={[1, null, 2, 3, 4, 5]} spacing='40px'>
 
-              {eventList.items?.map((eventList, key) =>
+              {filtered?.map((eventList, key) =>
 
                 <EventList
                   key={eventList?.id}
@@ -99,7 +115,7 @@ function HomePage() {
                   image={eventList?.poster_url}
                   category={eventList?.category?.name}
 
-                                                            // burda gelen data bozuk olduğu için replace" metodu ile gelebilecek her türlü yanlış datayı silmek için kullandım
+                                                            // burda gelen data bozuk olduğu için "replace" metodu ile gelebilecek her türlü yanlış datayı silmek için kullandım
                   description={eventList?.content?.replace("<br /><br />", " ").replace("<br /><br />", " ").replace("</strong>", " ").replace("<br />", " ")
                     .replace("<strong>", " ").replace("<br /><strong>", " ")
                     .replace("</strong><br />", " ")

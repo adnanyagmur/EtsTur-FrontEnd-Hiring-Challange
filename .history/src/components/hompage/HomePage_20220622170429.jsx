@@ -27,6 +27,21 @@ function HomePage() {
 
   console.log(eventList)
 
+  //filtreleme
+  const [filterString, setFilterString] = useState();
+  
+  
+  const filtered = eventList?.items?.name.filter((item)=>{
+        return Object.keys(item).some((key)=>
+        item[key]
+        .toString()
+        .toLowerCase()
+        .includes(filterString.toLocaleLowerCase())
+        )
+      })
+    }
+  }
+
   return (
         <Grid
           templateAreas={`"header header"
@@ -99,7 +114,7 @@ function HomePage() {
                   image={eventList?.poster_url}
                   category={eventList?.category?.name}
 
-                                                            // burda gelen data bozuk olduğu için replace" metodu ile gelebilecek her türlü yanlış datayı silmek için kullandım
+                                                            // burda gelen data bozuk olduğu için "replace" metodu ile gelebilecek her türlü yanlış datayı silmek için kullandım
                   description={eventList?.content?.replace("<br /><br />", " ").replace("<br /><br />", " ").replace("</strong>", " ").replace("<br />", " ")
                     .replace("<strong>", " ").replace("<br /><strong>", " ")
                     .replace("</strong><br />", " ")
