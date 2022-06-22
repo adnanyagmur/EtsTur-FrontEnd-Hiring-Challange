@@ -2,10 +2,25 @@ import {Box,Image,Badge, Button} from '@chakra-ui/react';
 import  {useNavigate} from 'react-router-dom';
 
 
-const EventList = ({name,eventList, image,basTarihi , category,price})=> {
+const EventList = ({name, image,basTarihi ,description, category,price,bitisTarihi,venue,ticketLink,address,city,district})=> {
 const navigation = useNavigate();
-    const handleDetail = (()=>{
-        navigation("/detailPage",{bilgiler:eventList})
+
+/////Bu akla gelen basit yararlı ama saçma bir çözüm 
+   const handleDetail = (()=>{
+    localStorage.clear();
+    localStorage.setItem("name",name);
+    localStorage.setItem("image",image);
+    localStorage.setItem("category",category);
+    localStorage.setItem("description",description);
+    localStorage.setItem("price",price);
+    localStorage.setItem("basTarih",String(basTarihi));
+    localStorage.setItem("bitistarihi",String(bitisTarihi));
+    localStorage.setItem("venue",venue);
+    localStorage.setItem("ticketLink",ticketLink);
+    localStorage.setItem("address",address);
+    localStorage.setItem("city",city);
+    localStorage.setItem("district",district);
+    navigation("/detailPage");
     }) 
 
     return(
@@ -13,14 +28,14 @@ const navigation = useNavigate();
 
 
 
-
+      
   <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
       <Image src={image} alt={name} />
 
       <Box p='6'>
         <Box display='flex' alignItems='baseline'>
           <Badge borderRadius='full' px='2' colorScheme='teal'>
-           {price ? ("Ücretli"):("Ücretsiz")}
+           {price === true? ("Ücretli"):("Ücretsiz")}
           </Badge>
           <Box
             color='gray.500'
